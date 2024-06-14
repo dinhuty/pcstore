@@ -7,8 +7,8 @@ const Banner = () => {
     <Box>
       <Image
         src={'/images/banner1.png'}
-        width="0"
-        height="0"
+        width="1000"
+        height="500"
         sizes="100vw"
         style={{ width: '100%', height: 'auto' }}
         alt="banner"

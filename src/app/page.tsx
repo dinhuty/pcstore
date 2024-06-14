@@ -4,6 +4,7 @@ import { Grid, Stack } from '@mui/material';
 import { products } from '@/Mockdata/product';
 import Heading from '@/app/components/common/Heading';
 import Image from 'next/image';
+import PcSite from '@/app/components/Home/PcSite';
 
 export default function Home() {
   return (
@@ -62,6 +63,7 @@ export default function Home() {
             })}
           </Grid>
         </Stack>
+        <PcSite />
       </Stack>
     </main>
   );
