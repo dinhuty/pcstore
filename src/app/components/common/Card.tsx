@@ -1,8 +1,12 @@
+import FooterCard from '@/app/components/common/FooterCard';
+import TextPrice from '@/app/components/common/TextPrice';
 import { IProduct } from '@/interfaces/product';
-import { formatCurrency } from '@/utils/formatCurrency';
 import { Box, Stack, Typography } from '@mui/material';
+import CheckIcon from '@mui/icons-material/Check';
 import Image from 'next/image';
 import React from 'react';
+import CallIcon from '@mui/icons-material/Call';
+import BtnBuy from '@/app/components/common/BtnBuy';
 
 const Card = ({ product }: { product: IProduct }) => {
   return (
@@ -10,7 +14,7 @@ const Card = ({ product }: { product: IProduct }) => {
       sx={{
         boxShadow:
           'inset 1px 0px 0px #EDEDED, inset -1px 0px 0px #EDEDED, inset 0px 1px 0px #EDEDED, inset 0px -1px 0px #EDEDED',
-        padding: '20px 10px',
+        padding: '20px 10px 10px 10px',
         borderRadius: '8px'
       }}
     >
@@ -25,34 +29,33 @@ const Card = ({ product }: { product: IProduct }) => {
             alt="banner"
           />
         </Box>
-        <Stack spacing={2}>
+        <Stack spacing={1}>
           <Typography
             sx={{
               lineHeight: '20px',
-              fontWeight: 600
+              fontWeight: 600,
+              display: 'block',
+              height: '40px',
+              fontSize: '14px'
             }}
           >
             {product.name}
           </Typography>
           <Stack spacing={1}>
-            <Typography
-              sx={{
-                color: '#6D6E72',
-                lineHeight: '12px',
-                textDecoration: 'line-through'
-              }}
-            >
-              {formatCurrency(product.originPrice)} VND
-            </Typography>
-            <Typography
-              sx={{
-                color: '#E30019',
-                lineHeight: '20px',
-                fontWeight: 600
-              }}
-            >
-              {formatCurrency(product.price)} VND
-            </Typography>
+            <TextPrice originPrice={product.originPrice} price={product.price} />
+          </Stack>
+          <Stack spacing={2}>
+            <Stack>
+              <FooterCard
+                leftText="Còn hàng"
+                iconLeft={<CheckIcon sx={{ height: '15px', color: '#00a706' }} />}
+                rightText="Gọi đặt ngay"
+                iconRight={<CallIcon sx={{ height: '15px', color: '#0074da' }} />}
+              />
+            </Stack>
+            <Stack>
+              <BtnBuy />
+            </Stack>
           </Stack>
         </Stack>
       </Stack>

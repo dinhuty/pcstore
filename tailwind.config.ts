@@ -45,7 +45,7 @@ const config: Config = {
       },
       success: {
         dark: '#05882c',
-        light: '#cdf0d8',
+        light: '#00a706',
         DEFAULT: '#07b53b'
       },
       typo: {
@@ -80,6 +80,8 @@ const config: Config = {
         800: '#272727',
         900: '#020202'
       },
+      blue: '#243a76',
+      red: '#f10000',
       white: '#ffffff',
       border: '#dddee0',
       'header-line': '#303f62',
